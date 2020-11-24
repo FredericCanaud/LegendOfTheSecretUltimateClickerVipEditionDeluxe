@@ -1,3 +1,7 @@
 .gridPane {
     -fx-background-image:url('../img/background.jpg');
 }
+
+.creationClasse {
+    visibility: false;
+}
