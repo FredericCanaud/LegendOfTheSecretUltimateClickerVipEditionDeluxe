@@ -1,6 +1,9 @@
 package application;
 
 import classes.arme.Arc;
+import classes.arme.Bouclier;
+import classes.arme.FlecheDeGlace;
+import classes.arme.FlecheNormale;
 import classes.personnages.Chasseur;
 import classes.personnages.Guerrier;
 import javafx.application.Application;
@@ -35,13 +38,12 @@ public class Main extends Application {
 		chasseur.addArc(new Arc(2));
 		chasseur.addFleches("FlecheDeGlace", 2);
 
-		chasseur.addFleches("FlecheNormale", 2);
+		chasseur.addFleches("FlecheNormale", 3);
 		chasseur.utiliseArc(0);
+
 		chasseur.utiliseFleche("FlecheDeGlace");
-
 		chasseur.infligerDegats(guerrier);
 		chasseur.infligerDegats(guerrier);
-
 		chasseur.utiliseFleche("FlecheNormale");
 
 		chasseur.infligerDegats(guerrier);
@@ -49,7 +51,6 @@ public class Main extends Application {
 		chasseur.infligerDegats(guerrier);
 
 		System.out.println(guerrier.getPv());
-		System.out.println(chasseur.getListeFleches().get("FlecheNormale"));
 		launch(args);
     }
 

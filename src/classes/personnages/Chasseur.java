@@ -17,10 +17,10 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 		super(pv, pm, lvl);
 		this.armeUtilisable = new ArrayList<>();
 		this.listeFleches = new HashMap<>();
-		this.listeFleches.put(FlecheNormale.class.getName(),0);
-		this.listeFleches.put(FlecheBizarre.class.getName(),0);
-		this.listeFleches.put(FlecheDeFeu.class.getName(),0);
-		this.listeFleches.put(FlecheDeGlace.class.getName(),0);
+		this.listeFleches.put(FlecheNormale.class.getSimpleName(),0);
+		this.listeFleches.put(FlecheBizarre.class.getSimpleName(),0);
+		this.listeFleches.put(FlecheDeFeu.class.getSimpleName(),0);
+		this.listeFleches.put(FlecheDeGlace.class.getSimpleName(),0);
 		this.fleche = new FlecheNormale();
 	}
 
@@ -33,8 +33,9 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 	}
 
 	public void utiliseFleche(String nomFleche) {
+
 		if (this.getFlecheType(nomFleche) != null) {
-			this.fleche = Fleche.getNewFleche(nomFleche);
+			this.fleche = Fleche.setNewFleche(nomFleche);
 		}
 
 	}
@@ -79,5 +80,9 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 
 	public HashMap<String, Integer> getListeFleches() {
 		return listeFleches;
+	}
+
+	public Fleche getFleche() {
+		return fleche;
 	}
 }
