@@ -27,8 +27,6 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 		this.addFleches("FlecheNormale",10);
 		this.utiliseArc(0);
 		this.fleche = new FlecheNormale();
-		this.arc = null;
-		this.fleche = null;
 	}
 
 	public Chasseur(){

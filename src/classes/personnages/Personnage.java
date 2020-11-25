@@ -61,7 +61,7 @@ public abstract class Personnage {
 	public void setNiveau(int niveau) {
 		this.niveau = niveau;
 	}
-	public boolean isKo(){ return (this.pv <= 0); }
+	public boolean isKo(){ return (this.pointsDeManaRestants <= 0); }
     
 	public int getPointsDeManaRestants() {
 		return pointsDeManaRestants;

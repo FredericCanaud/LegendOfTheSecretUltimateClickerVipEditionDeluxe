@@ -24,7 +24,8 @@
 }
 
 .milieuMilieu {
-    -fx-background-color: pink;
+    -fx-background-image:url('../img/background-fight.jpg');
+    -fx-background-size: cover;
 }
 
 .milieuGauche {
