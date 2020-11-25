@@ -61,12 +61,17 @@ public class StartMenuController {
     }
 
     public void commencerPartie(MouseEvent mouseEvent) throws IOException {
+
         Stage stage = (Stage) validerClasse.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("ingame.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ingame.fxml"));
+        Parent root = loader.load();
         Scene scene = new Scene(root, 1280, 720);
         scene.getStylesheets().add("css/style.css");
         stage.setScene(scene);
         stage.show();
-        Main.setMusic("src/audio/combat.mp3");
+        Main.setMusic("src/audio/combat2.mp3", 0.15);
+        String classeChoisie = ((ToggleButton) toggleGroup.getSelectedToggle()).getId();
+        IngameController ingameController = loader.getController();
+        ingameController.initData(classeChoisie);
     }
 }

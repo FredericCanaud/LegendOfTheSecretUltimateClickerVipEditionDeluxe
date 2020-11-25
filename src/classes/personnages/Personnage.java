@@ -1,5 +1,6 @@
 package classes.personnages;
 
+import classes.arme.Epee;
 import classes.arme.sorts.Sort;
 
 import java.util.ArrayList;
@@ -9,16 +10,12 @@ public abstract class Personnage {
 	protected int pm;
 	protected int lvl;
 	protected ArrayList<Sort> listeSorts;
-	protected boolean estKo;
-	
 	
 	public Personnage(int pv, int pm, int lvl) {
-		super();
 		this.pv = pv;
 		this.pm = pm;
 		this.lvl = lvl;
 		this.listeSorts = new ArrayList<>();
-		this.estKo = false;
 	}
 	
 	
@@ -31,7 +28,6 @@ public abstract class Personnage {
 		this.pv -= value;
 		if (this.pv <= 0) {
 			this.pv = 0;
-			this.estKo = true;
 		}
 	}
 	
@@ -63,5 +59,4 @@ public abstract class Personnage {
 	public void setLvl(int lvl) {
 		this.lvl = lvl;
 	}
-	
 }

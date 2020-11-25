@@ -12,10 +12,6 @@ public abstract class Fleche extends Arme implements InfligeDegats {
 		return this.degats;
 	}
 	
-	public String getClassName() {
-		return this.getClass().getName();
-	}
-	
 	public static Fleche getNewFleche(String nomFleche) {
 		switch(nomFleche) {
 			case "FlecheNormale":
@@ -28,5 +24,9 @@ public abstract class Fleche extends Arme implements InfligeDegats {
 				return new FlecheBizarre();
 		}
 			
+	}
+
+	public String getType(){
+		return this.getClass().getName();
 	}
 }

@@ -7,7 +7,7 @@ import classes.arme.Epee;
 import java.util.ArrayList;
 
 public class Guerrier extends Personnage implements ManipulateurDArme {
-	
+
 	protected ArrayList<Arme> armeUtilisable;
 	protected Epee epee;
 	protected Bouclier bouclier;
@@ -20,7 +20,7 @@ public class Guerrier extends Personnage implements ManipulateurDArme {
 	public void addEpee(Epee epee) {
 		this.armeUtilisable.add(epee);
 	}
-	
+
 	public void addBouclier(Bouclier bouclier) {
 		this.armeUtilisable.add(bouclier);
 	}
@@ -28,16 +28,15 @@ public class Guerrier extends Personnage implements ManipulateurDArme {
 	public void utiliser(Bouclier bouclier) {
 		this.bouclier = bouclier;
 	}
-	
+
 	public void utiliser(Epee epee) {
 		this.epee = epee;
 	}
-	
-	
+
 	@Override
 	public void infligerDegats(Personnage adversaire) {
 		adversaire.recevoirDegats(this.epee.getDegats());
-		
+
 	}
 
 	@Override
@@ -48,9 +47,7 @@ public class Guerrier extends Personnage implements ManipulateurDArme {
 		}else {
 			this.diminuerPv(value);
 		}
-		
-		
+
+
 	}
-	
-	
 }
