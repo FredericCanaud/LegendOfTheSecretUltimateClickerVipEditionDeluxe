@@ -17,24 +17,32 @@ public class IngameController {
 
     public Label niveauHero;
     public Label pointsDeVieHero;
+    public Label pointsDeVieMana;
     public Label armeEquipee;
 
     Personnage hero;
     
     void initData(String classeChoisie, String nomHero) {
+        System.out.println(classeChoisie);
+
         switch(classeChoisie){
             case "guerrier":
                 hero = new Guerrier();
-                Epee epeeClassique = new Epee(10);
-
-                //this.armeEquipee.setText((Guerrier) hero.;
+                
+                this.armeEquipee.setText(( (Guerrier) hero).getEpee().getClass().getSimpleName());
+                break;
+               
             case "archer":
                 hero = new Chasseur();
 
+                this.armeEquipee.setText(((Chasseur) hero).getArc().getClass().getSimpleName());
+                break;
+                
         }
         this.nomHero.setText(nomHero);
-        this.niveauHero.setText(String.valueOf(hero.getNiveau()));
-        this.pointsDeVieHero.setText(hero.getPointsDeVieRestants() + ":" + hero.getPointsDeVieMax());
+        this.niveauHero.setText("Niveau " + String.valueOf(hero.getNiveau()));
+        this.pointsDeVieHero.setText("PV : " + hero.getPointsDeVieRestants() + "/" + hero.getPointsDeVieMax());
+        this.pointsDeVieMana.setText("PM : " + hero.getPointsDeManaRestants() + "/" + hero.getPointsDeManaMax());
     }
 
 }

@@ -1,24 +1,19 @@
 package classes.personnages;
 
-import classes.sorts.Sort;
-
-import java.util.ArrayList;
-
 public abstract class Personnage {
 	protected int pointsDeVieRestants;
 	protected int pointsDeVieMax;
-	protected int pointsDeMana;
+	protected int pointsDeManaMax;
+	protected int pointsDeManaRestants;
 	protected int niveau;
-
 	
 	public Personnage(int pointsDeVieMax, int pointsDeMana, int niveau) {
 		this.pointsDeVieMax = pointsDeVieMax;
 		this.pointsDeVieRestants = pointsDeVieMax;
-		this.pointsDeMana = pointsDeMana;
+		this.pointsDeManaMax = pointsDeMana;
+		this.pointsDeManaRestants = pointsDeMana;
 		this.niveau = niveau;
-
 	}
-	
 	
 	public abstract void infligerDegats(Personnage adversaire);
 	public void recevoirDegats(int value){
@@ -28,40 +23,47 @@ public abstract class Personnage {
 	
 	//========= GESTION DE LA VIE =============
 	public void diminuerPv(int value) {
-		this.pointsDeVieRestants -= value;
-		if (this.pointsDeVieRestants <= 0) {
-			this.pointsDeVieRestants = 0;
+		if(value > 0){
+			this.pointsDeVieRestants = Math.max(this.pointsDeVieRestants - value, 0);
+		}
+	}
+
+	public void augmenterPv(int value) {
+		if(value > 0){
+			this.pointsDeVieRestants = Math.min(this.pointsDeVieRestants + value, this.pointsDeVieRestants);
 		}
 	}
 	
-	public void augmenterPv(int value) {
-		this.pointsDeVieRestants += value;
-	}
-	
-	
-	
-	
 	//=========== GETTERS AND SETTERS ============
-	
-	
+
 	public int getPointsDeVieRestants() {
 		return pointsDeVieRestants;
 	}
+
 	public int getPointsDeVieMax() { return pointsDeVieMax; }
+
 	public void setPointsDeVieRestants(int pointsDeVieRestants) {
 		this.pointsDeVieRestants = pointsDeVieRestants;
 	}
-	public int getPointsDeMana() {
-		return pointsDeMana;
+
+	public int getPointsDeManaMax() {
+		return pointsDeManaMax;
 	}
-	public void setPointsDeMana(int pointsDeMana) {
-		this.pointsDeMana = pointsDeMana;
+
+	public void setPointsDeManaMax(int pointsDeManaMax) {
+		this.pointsDeManaMax = pointsDeManaMax;
 	}
+
 	public int getNiveau() {
 		return niveau;
 	}
+
 	public void setNiveau(int niveau) {
 		this.niveau = niveau;
 	}
 	public boolean isKo(){ return (this.pv <= 0); }
+    
+	public int getPointsDeManaRestants() {
+		return pointsDeManaRestants;
+	}
 }

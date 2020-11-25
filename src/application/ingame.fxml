@@ -6,7 +6,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.scene.shape.Box?>
 <GridPane fx:id="container" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.IngameController">
     <columnConstraints>
         <ColumnConstraints percentWidth="20" />
@@ -40,10 +39,11 @@
 
     </HBox>
     <VBox GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="basGauche">
-        <Label fx:id="nomHero"/>
-        <Label fx:id="niveauHero"/>
-        <Label fx:id="pointsDeVieHero"/>
-        <Label fx:id="armeEquipee"/>
+        <Label fx:id="nomHero" styleClass="labelWrite"/>
+        <Label fx:id="niveauHero" styleClass="labelWrite"/>
+        <Label fx:id="pointsDeVieHero" styleClass="labelWrite"/>
+        <Label fx:id="pointsDeVieMana" styleClass="labelWrite"/>
+        <Label fx:id="armeEquipee" styleClass="labelWrite"/>
     </VBox>
     <HBox GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="basMilieu">
 

@@ -16,6 +16,7 @@
 
 .basGauche {
     -fx-background-color: green;
+    -fx-text-alignment: center;
 }
 
 .milieuDroite {
@@ -42,3 +43,7 @@
     -fx-background-color: cyan;
 }
 
+.labelWrite {
+    -fx-text-fill: white;
+    -fx-font-size: 16pt;
+}
