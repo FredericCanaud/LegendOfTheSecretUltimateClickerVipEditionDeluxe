@@ -9,19 +9,21 @@ public abstract class Personnage {
 	protected int pointsDeVieMax;
 	protected int pointsDeMana;
 	protected int niveau;
-	protected ArrayList<Sort> listeSorts;
+
 	
 	public Personnage(int pointsDeVieMax, int pointsDeMana, int niveau) {
 		this.pointsDeVieMax = pointsDeVieMax;
 		this.pointsDeVieRestants = pointsDeVieMax;
 		this.pointsDeMana = pointsDeMana;
 		this.niveau = niveau;
-		this.listeSorts = new ArrayList<>();
+
 	}
 	
 	
 	public abstract void infligerDegats(Personnage adversaire);
-	public abstract void recevoirDegats(int value);
+	public void recevoirDegats(int value){
+		this.diminuerPv(value);
+	}
 	
 	
 	//========= GESTION DE LA VIE =============
@@ -61,4 +63,5 @@ public abstract class Personnage {
 	public void setNiveau(int niveau) {
 		this.niveau = niveau;
 	}
+	public boolean isKo(){ return (this.pv <= 0); }
 }

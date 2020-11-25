@@ -22,6 +22,8 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 		this.listeFleches.put(FlecheDeFeu.class.getSimpleName(),0);
 		this.listeFleches.put(FlecheDeGlace.class.getSimpleName(),0);
 		this.fleche = new FlecheNormale();
+		this.arc = null;
+		this.fleche = null;
 	}
 
 	public void addArc(Arc arc) {
@@ -73,10 +75,6 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 		}
 	}
 
-	@Override
-	public void recevoirDegats(int value) {
-		this.diminuerPv(value);
-	}
 
 	public HashMap<String, Integer> getListeFleches() {
 		return listeFleches;

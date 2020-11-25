@@ -15,6 +15,8 @@ public class Guerrier extends Personnage implements ManipulateurDArme {
 	public Guerrier(int pv, int pm, int lvl) {
 		super(pv, pm, lvl);
 		this.armeUtilisable = new ArrayList<>();
+		this.bouclier = null;
+		this.epee = null;
 	}
 
 	public void addEpee(Epee epee) {
