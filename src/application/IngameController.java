@@ -24,18 +24,13 @@ public class IngameController {
     void initData(String classeChoisie, String nomHero) {
         switch(classeChoisie){
             case "guerrier":
-                hero = new Guerrier(50,10,1);
+                hero = new Guerrier();
                 Epee epeeClassique = new Epee(10);
-                ((Guerrier) hero).addEpee(epeeClassique);
-                ((Guerrier) hero).addBouclier(new Bouclier(7));
-                ((Guerrier) hero).utiliser(epeeClassique);
-                this.armeEquipee.setText((Guerrier) hero.;
+
+                //this.armeEquipee.setText((Guerrier) hero.;
             case "archer":
-                hero = new Chasseur(35,15,1);
-                Arc arcClassique = new Arc(2);
-                ((Chasseur) hero).addArc(arcClassique);
-                ((Chasseur) hero).addFleches("FlecheNormale",10);
-                ((Chasseur) hero).utiliseArc(0);
+                hero = new Chasseur();
+
         }
         this.nomHero.setText(nomHero);
         this.niveauHero.setText(String.valueOf(hero.getNiveau()));

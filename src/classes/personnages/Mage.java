@@ -13,6 +13,7 @@ public class Mage extends Personnage {
 
 	public Mage(int pv, int pm, int lvl) {
 		super(pv, pm, lvl);
+		//TODO
 	}
 
 	public void addSort(Sort sort) {

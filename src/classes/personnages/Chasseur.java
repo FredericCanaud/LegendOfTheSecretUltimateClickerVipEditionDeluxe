@@ -17,13 +17,26 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 		super(pv, pm, lvl);
 		this.armeUtilisable = new ArrayList<>();
 		this.listeFleches = new HashMap<>();
-		this.listeFleches.put(FlecheNormale.class.getSimpleName(),0);
+		this.listeFleches.put(FlecheNormale.class.getSimpleName(),20);
 		this.listeFleches.put(FlecheBizarre.class.getSimpleName(),0);
 		this.listeFleches.put(FlecheDeFeu.class.getSimpleName(),0);
 		this.listeFleches.put(FlecheDeGlace.class.getSimpleName(),0);
 		this.fleche = new FlecheNormale();
 		this.arc = null;
 		this.fleche = null;
+	}
+
+	public Chasseur(){
+		super(35, 20, 1);
+		this.armeUtilisable = new ArrayList<>();
+		this.listeFleches = new HashMap<>();
+		this.listeFleches.put(FlecheNormale.class.getSimpleName(),20);
+		this.listeFleches.put(FlecheBizarre.class.getSimpleName(),0);
+		this.listeFleches.put(FlecheDeFeu.class.getSimpleName(),0);
+		this.listeFleches.put(FlecheDeGlace.class.getSimpleName(),0);
+		this.fleche = new FlecheNormale();
+		this.arc = new Arc(2);;
+		this.utiliseFleche("FlecheNormale");
 	}
 
 	public void addArc(Arc arc) {
