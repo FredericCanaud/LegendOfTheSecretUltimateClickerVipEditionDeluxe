@@ -1,4 +1,4 @@
-package classes.arme.sorts;
+package classes.sorts;
 
 public class Soin1 extends SortD1 {
 	private int soin;

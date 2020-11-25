@@ -1,8 +1,8 @@
-package classes.arme.sorts;
+package classes.sorts;
 
 import classes.arme.InfligeDegats;
 
-public abstract class SortA1 extends SortNV1 implements InfligeDegats {
+public abstract class SortA1 extends SortNV1 implements SortDeDegats {
 	protected int degats;
 	
 	public SortA1(int degats, int manaConsomme){

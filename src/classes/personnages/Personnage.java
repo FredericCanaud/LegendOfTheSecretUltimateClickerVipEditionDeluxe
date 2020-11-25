@@ -1,7 +1,6 @@
 package classes.personnages;
 
-import classes.arme.Epee;
-import classes.arme.sorts.Sort;
+import classes.sorts.Sort;
 
 import java.util.ArrayList;
 

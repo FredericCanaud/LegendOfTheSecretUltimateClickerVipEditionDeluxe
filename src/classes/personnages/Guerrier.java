@@ -33,10 +33,14 @@ public class Guerrier extends Personnage implements ManipulateurDArme {
 		this.epee = epee;
 	}
 
+
+	public void leverBouclier(){
+		this.bouclier.setHold(true);
+	}
+
 	@Override
 	public void infligerDegats(Personnage adversaire) {
 		adversaire.recevoirDegats(this.epee.getDegats());
-
 	}
 
 	@Override
@@ -47,7 +51,5 @@ public class Guerrier extends Personnage implements ManipulateurDArme {
 		}else {
 			this.diminuerPv(value);
 		}
-
-
 	}
 }

@@ -1,4 +1,4 @@
-package classes.arme.sorts;
+package classes.sorts;
 
 public class BouleDeFeu2 extends SortA2 {
 

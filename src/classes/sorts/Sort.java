@@ -1,4 +1,4 @@
-package classes.arme.sorts;
+package classes.sorts;
 
 public abstract class Sort {
 	protected int manaConsomme;

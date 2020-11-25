@@ -1,7 +1,7 @@
 package classes.personnages;
 
 
-import classes.arme.sorts.Sort;
+import classes.sorts.Sort;
 
 public class Mage extends Personnage {
 	
@@ -13,10 +13,11 @@ public class Mage extends Personnage {
 		this.listeSorts.add(sort);
 	}
 
+
+
 	@Override
 	public void infligerDegats(Personnage adversaire) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

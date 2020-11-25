@@ -1,6 +1,4 @@
-package classes.arme.sorts;
-
-import classes.arme.sorts.Sort;
+package classes.sorts;
 
 public abstract class SortNV1 extends Sort {
 
