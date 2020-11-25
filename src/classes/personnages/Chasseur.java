@@ -21,6 +21,11 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 		this.listeFleches.put(FlecheBizarre.class.getSimpleName(),0);
 		this.listeFleches.put(FlecheDeFeu.class.getSimpleName(),0);
 		this.listeFleches.put(FlecheDeGlace.class.getSimpleName(),0);
+
+		Arc arcClassique = new Arc(2);
+		this.addArc(arcClassique);
+		this.addFleches("FlecheNormale",10);
+		this.utiliseArc(0);
 		this.fleche = new FlecheNormale();
 		this.arc = null;
 		this.fleche = null;
@@ -82,5 +87,8 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 
 	public Fleche getFleche() {
 		return fleche;
+	}
+	public Arc getArc() {
+		return arc;
 	}
 }

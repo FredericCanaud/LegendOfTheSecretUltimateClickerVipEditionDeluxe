@@ -17,29 +17,30 @@ public class IngameController {
 
     public Label niveauHero;
     public Label pointsDeVieHero;
+    public Label pointsDeVieMana;
     public Label armeEquipee;
 
     Personnage hero;
     
     void initData(String classeChoisie, String nomHero) {
+        System.out.println(classeChoisie);
+
         switch(classeChoisie){
-            case "guerrier":
+            case "creerGuerrier":
                 hero = new Guerrier(50,10,1);
-                Epee epeeClassique = new Epee(10);
-                ((Guerrier) hero).addEpee(epeeClassique);
-                ((Guerrier) hero).addBouclier(new Bouclier(7));
-                ((Guerrier) hero).utiliser(epeeClassique);
-                this.armeEquipee.setText((Guerrier) hero.;
-            case "archer":
+                this.armeEquipee.setText(( (Guerrier) hero).getEpee().getClass().getSimpleName());
+                break;
+
+            case "creerArcher":
                 hero = new Chasseur(35,15,1);
-                Arc arcClassique = new Arc(2);
-                ((Chasseur) hero).addArc(arcClassique);
-                ((Chasseur) hero).addFleches("FlecheNormale",10);
-                ((Chasseur) hero).utiliseArc(0);
+                this.armeEquipee.setText(((Chasseur) hero).getArc().getClass().getSimpleName());
+                break;
+
         }
         this.nomHero.setText(nomHero);
-        this.niveauHero.setText(String.valueOf(hero.getNiveau()));
-        this.pointsDeVieHero.setText(hero.getPointsDeVieRestants() + ":" + hero.getPointsDeVieMax());
+        this.niveauHero.setText("Niveau " + String.valueOf(hero.getNiveau()));
+        this.pointsDeVieHero.setText("PV : " + hero.getPointsDeVieRestants() + "/" + hero.getPointsDeVieMax());
+        this.pointsDeVieMana.setText("PM : " + hero.getPointsDeManaRestants() + "/" + hero.getPointsDeManaMax());
     }
 
 }

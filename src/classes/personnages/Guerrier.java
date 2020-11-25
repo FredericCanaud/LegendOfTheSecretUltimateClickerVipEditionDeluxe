@@ -12,11 +12,13 @@ public class Guerrier extends Personnage implements ManipulateurDArme {
 	protected Epee epee;
 	protected Bouclier bouclier;
 
-	public Guerrier(int pv, int pm, int lvl) {
-		super(pv, pm, lvl);
+	public Guerrier(int pointsDevieMax, int pointsDeMana, int niveau) {
+		super(pointsDevieMax, pointsDeMana, niveau);
 		this.armeUtilisable = new ArrayList<>();
-		this.bouclier = null;
-		this.epee = null;
+		Epee epeeClassique = new Epee(10);
+		this.addEpee(epeeClassique);
+		this.addBouclier(new Bouclier(2));
+		this.utiliser(epeeClassique);
 	}
 
 	public void addEpee(Epee epee) {
@@ -53,5 +55,9 @@ public class Guerrier extends Personnage implements ManipulateurDArme {
 		}else {
 			this.diminuerPv(value);
 		}
+	}
+
+	public Epee getEpee() {
+		return epee;
 	}
 }
