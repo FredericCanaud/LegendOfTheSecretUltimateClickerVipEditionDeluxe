@@ -5,15 +5,17 @@ import classes.sorts.Sort;
 import java.util.ArrayList;
 
 public abstract class Personnage {
-	protected int pv;
-	protected int pm;
-	protected int lvl;
+	protected int pointsDeVieRestants;
+	protected int pointsDeVieMax;
+	protected int pointsDeMana;
+	protected int niveau;
 	protected ArrayList<Sort> listeSorts;
 	
-	public Personnage(int pv, int pm, int lvl) {
-		this.pv = pv;
-		this.pm = pm;
-		this.lvl = lvl;
+	public Personnage(int pointsDeVieMax, int pointsDeMana, int niveau) {
+		this.pointsDeVieMax = pointsDeVieMax;
+		this.pointsDeVieRestants = pointsDeVieMax;
+		this.pointsDeMana = pointsDeMana;
+		this.niveau = niveau;
 		this.listeSorts = new ArrayList<>();
 	}
 	
@@ -24,14 +26,14 @@ public abstract class Personnage {
 	
 	//========= GESTION DE LA VIE =============
 	public void diminuerPv(int value) {
-		this.pv -= value;
-		if (this.pv <= 0) {
-			this.pv = 0;
+		this.pointsDeVieRestants -= value;
+		if (this.pointsDeVieRestants <= 0) {
+			this.pointsDeVieRestants = 0;
 		}
 	}
 	
 	public void augmenterPv(int value) {
-		this.pv += value;
+		this.pointsDeVieRestants += value;
 	}
 	
 	
@@ -40,22 +42,23 @@ public abstract class Personnage {
 	//=========== GETTERS AND SETTERS ============
 	
 	
-	public int getPv() {
-		return pv;
+	public int getPointsDeVieRestants() {
+		return pointsDeVieRestants;
 	}
-	public void setPv(int pv) {
-		this.pv = pv;
+	public int getPointsDeVieMax() { return pointsDeVieMax; }
+	public void setPointsDeVieRestants(int pointsDeVieRestants) {
+		this.pointsDeVieRestants = pointsDeVieRestants;
 	}
-	public int getPm() {
-		return pm;
+	public int getPointsDeMana() {
+		return pointsDeMana;
 	}
-	public void setPm(int pm) {
-		this.pm = pm;
+	public void setPointsDeMana(int pointsDeMana) {
+		this.pointsDeMana = pointsDeMana;
 	}
-	public int getLvl() {
-		return lvl;
+	public int getNiveau() {
+		return niveau;
 	}
-	public void setLvl(int lvl) {
-		this.lvl = lvl;
+	public void setNiveau(int niveau) {
+		this.niveau = niveau;
 	}
 }

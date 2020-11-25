@@ -5,3 +5,40 @@
 .creationClasse {
     visibility: false;
 }
+
+.basDroite {
+    -fx-background-color: red;
+}
+
+.basMilieu {
+    -fx-background-color: blue;
+}
+
+.basGauche {
+    -fx-background-color: green;
+}
+
+.milieuDroite {
+    -fx-background-color: yellow;
+}
+
+.milieuMilieu {
+    -fx-background-color: pink;
+}
+
+.milieuGauche {
+    -fx-background-color: brown;
+}
+
+.hautDroite {
+    -fx-background-color: purple;
+}
+
+.hautMilieu {
+    -fx-background-color: black;
+}
+
+.hautGauche {
+    -fx-background-color: cyan;
+}
+

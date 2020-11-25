@@ -69,9 +69,10 @@ public class StartMenuController {
         scene.getStylesheets().add("css/style.css");
         stage.setScene(scene);
         stage.show();
-        Main.setMusic("src/audio/combat2.mp3", 0.15);
+        Main.setMusic("src/audio/combat2.mp3", 0.07);
         String classeChoisie = ((ToggleButton) toggleGroup.getSelectedToggle()).getId();
+        String nomHero = pseudo.getText();
         IngameController ingameController = loader.getController();
-        ingameController.initData(classeChoisie);
+        ingameController.initData(classeChoisie, nomHero);
     }
 }

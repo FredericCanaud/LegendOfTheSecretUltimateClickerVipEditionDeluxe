@@ -1,9 +1,6 @@
 package application;
 
 import classes.arme.Arc;
-import classes.arme.Bouclier;
-import classes.arme.FlecheDeGlace;
-import classes.arme.FlecheNormale;
 import classes.personnages.Chasseur;
 import classes.personnages.Guerrier;
 import javafx.application.Application;
@@ -50,7 +47,7 @@ public class Main extends Application {
 		chasseur.infligerDegats(guerrier);
 		chasseur.infligerDegats(guerrier);
 
-		System.out.println(guerrier.getPv());
+		System.out.println(guerrier.getPointsDeVieRestants());
 		launch(args);
     }
 

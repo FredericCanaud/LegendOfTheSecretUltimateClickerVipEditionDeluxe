@@ -6,10 +6,50 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="application.IngameController"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.scene.shape.Box?>
+<GridPane fx:id="container" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.IngameController">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="20" />
+        <ColumnConstraints percentWidth="60" />
+        <ColumnConstraints percentWidth="20" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="25" />
+        <RowConstraints percentHeight="50" />
+        <RowConstraints percentHeight="25" />
+    </rowConstraints>
 
+    <VBox GridPane.columnIndex="0" styleClass="hautGauche">
 
-</AnchorPane>
+    </VBox>
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="hautMilieu">
+
+    </HBox>
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="hautDroite">
+        <Label fx:id="nomEnnemi"/>
+        <Label fx:id="niveauEnnemi"/>
+        <Label fx:id="pointsDeVieEnnemi"/>
+    </HBox>
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="milieuGauche">
+
+    </VBox>
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="milieuMilieu">
+
+    </HBox>
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="milieuDroite">
+
+    </HBox>
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="basGauche">
+        <Label fx:id="nomHero"/>
+        <Label fx:id="niveauHero"/>
+        <Label fx:id="pointsDeVieHero"/>
+        <Label fx:id="armeEquipee"/>
+    </VBox>
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="basMilieu">
+
+    </HBox>
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="basDroite">
+
+    </HBox>
+
+</GridPane>
