@@ -28,11 +28,11 @@ public class StartMenuController {
     @FXML
     public ToggleGroup toggleGroup;
     @FXML
-    private ToggleButton creerMage;
+    private ToggleButton mage;
     @FXML
-    private ToggleButton creerArcher;
+    private ToggleButton chasseur;
     @FXML
-    private ToggleButton creerGuerrier;
+    private ToggleButton guerrier;
     @FXML
     public TextField pseudo;
     public Label inputPseudo;
@@ -47,17 +47,14 @@ public class StartMenuController {
         ImageView iv2 = new ImageView();
         ImageView iv3 = new ImageView();
 
-        Image warrior = new Image("img/warrior.jpg");
-        iv1.setImage(warrior);
-        creerGuerrier.setGraphic(iv1);
+        iv1.setImage(new Image("img/warrior.jpg"));
+        guerrier.setGraphic(iv1);
 
-        Image archer = new Image("img/archer.jpg");
-        iv2.setImage(archer);
-        creerArcher.setGraphic(iv2);
+        iv2.setImage(new Image("img/archer.jpg"));
+        chasseur.setGraphic(iv2);
 
-        Image mage = new Image("img/mage.png");
-        iv3.setImage(mage);
-        creerMage.setGraphic(iv3);
+        iv3.setImage(new Image("img/mage.png"));
+        mage.setGraphic(iv3);
     }
 
     public void commencerPartie(MouseEvent mouseEvent) throws IOException {
@@ -74,5 +71,6 @@ public class StartMenuController {
         String nomHero = pseudo.getText();
         IngameController ingameController = loader.getController();
         ingameController.initData(classeChoisie, nomHero);
+        ingameController.startFight();
     }
 }

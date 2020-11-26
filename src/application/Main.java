@@ -29,7 +29,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        Chasseur chasseur = new Chasseur(20, 8, 1);
+        Chasseur chasseur = new Chasseur();
 		Guerrier guerrier = new Guerrier(30, 4, 1);
 
 		chasseur.addArc(new Arc(2));

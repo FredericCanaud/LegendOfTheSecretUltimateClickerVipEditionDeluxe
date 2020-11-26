@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane fx:id="container" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.IngameController">
+<GridPane fx:id="container" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.IngameController">
     <columnConstraints>
         <ColumnConstraints percentWidth="20" />
         <ColumnConstraints percentWidth="60" />
@@ -18,37 +16,49 @@
         <RowConstraints percentHeight="25" />
     </rowConstraints>
 
-    <VBox GridPane.columnIndex="0" styleClass="hautGauche">
+    <VBox styleClass="hautGauche" GridPane.columnIndex="0">
 
     </VBox>
-    <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="hautMilieu">
-
+    <HBox styleClass="hautMilieu" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <Label fx:id="dialogue" styleClass="labelWrite" />
     </HBox>
-    <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="hautDroite">
-        <Label fx:id="nomEnnemi"/>
-        <Label fx:id="niveauEnnemi"/>
-        <Label fx:id="pointsDeVieEnnemi"/>
-    </HBox>
-    <VBox GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="milieuGauche">
+    <VBox styleClass="hautDroite" GridPane.columnIndex="2" GridPane.rowIndex="0">
+        <Label fx:id="nomEnnemi" styleClass="labelWrite" />
+        <Label fx:id="niveauEnnemi" styleClass="labelWrite" />
+        <Label fx:id="pointsDeVieEnnemi" styleClass="labelWrite" />
+    </VBox>
+    <VBox styleClass="milieuGauche" GridPane.columnIndex="0" GridPane.rowIndex="1">
 
     </VBox>
-    <HBox GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="milieuMilieu">
-
+    <HBox styleClass="milieuMilieu" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Pane>
+         <children>
+              <ImageView fx:id="ivHero" />
+         </children>
+      </Pane>
+      <Pane>
+         <children>
+              <ImageView fx:id="ivEnnemi" layoutX="175"/>
+         </children>
+      </Pane>
     </HBox>
-    <HBox GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="milieuDroite">
-
+    <HBox styleClass="milieuDroite" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <Button fx:id="sauvegarder" text="Sauvegarder" />
+        <Button fx:id="quitter" text="Quitter" />
     </HBox>
-    <VBox GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="basGauche">
-        <Label fx:id="nomHero" styleClass="labelWrite"/>
-        <Label fx:id="niveauHero" styleClass="labelWrite"/>
-        <Label fx:id="pointsDeVieHero" styleClass="labelWrite"/>
-        <Label fx:id="pointsDeVieMana" styleClass="labelWrite"/>
-        <Label fx:id="armeEquipee" styleClass="labelWrite"/>
+    <VBox styleClass="basGauche" GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <Label fx:id="nomHero" styleClass="labelWrite" />
+        <Label fx:id="niveauHero" styleClass="labelWrite" />
+        <Label fx:id="pointsDeVieHero" styleClass="labelWrite" />
+        <Label fx:id="pointsDeVieMana" styleClass="labelWrite" />
+        <Label fx:id="armeEquipee" styleClass="labelWrite" />
     </VBox>
-    <HBox GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="basMilieu">
-
+    <HBox styleClass="basMilieu" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <Button fx:id="action1" onMousePressed="#action1" />
+        <Button fx:id="action2" onMousePressed="#action2" />
+        <Button fx:id="passer" onMousePressed="#passer" text="Passer" />
     </HBox>
-    <HBox GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="basDroite">
+    <HBox styleClass="basDroite" GridPane.columnIndex="2" GridPane.rowIndex="2">
 
     </HBox>
 

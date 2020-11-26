@@ -1,6 +1,8 @@
 package classes.personnages;
 
 import classes.arme.*;
+import classes.sorts.BouleDeFeu1;
+import classes.sorts.Sort;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,6 +14,7 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 
 	protected Arc arc;
 	protected Fleche fleche;
+ 	protected Sort sort;
 
 	public Chasseur(int pv, int pm, int lvl) {
 		super(pv, pm, lvl);
@@ -40,6 +43,7 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 		this.fleche = new FlecheNormale();
 		this.arc = new Arc(2);;
 		this.utiliseFleche("FlecheNormale");
+		this.sort = new BouleDeFeu1();
 	}
 
 	public void addArc(Arc arc) {
@@ -102,4 +106,5 @@ public class Chasseur extends Personnage implements ManipulateurDArme {
 	public Arc getArc() {
 		return arc;
 	}
+	public Sort getSort() { return sort; }
 }
