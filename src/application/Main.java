@@ -55,6 +55,7 @@ public class Main extends Application {
         Media music = new Media(new File(musicURL).toURI().toString());
         if(null != player){
             player.stop();
+            player.dispose();
         }
         player = new MediaPlayer(music);
         player.setAutoPlay(true);

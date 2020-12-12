@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="startPane" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EcranTitreController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/img/scene/EcranTitre.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="300.0" layoutY="481.0" mnemonicParsing="false" onAction="#startButtonEvent" style="-fx-background-radius: 5%; -fx-border-color: none; -fx-background-color: #ffaf5a;" text="C'EST PARTI" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Avenir Black" size="31.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
